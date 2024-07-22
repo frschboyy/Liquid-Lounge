@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- signup strings -->
+
+    <string name="app_name">Page 1</string>
+    <string name="ek_img_content">ExportKit Image</string>
+    <string name="username_or_email_string">username or email</string>
+    <string name="password_string">password</string>
+    <string name="password_ek1_string">Password</string>
+    <string name="password_ek2_string">password</string>
+    <string name="confirm_password_string">Confirm Password</string>
+    <string name="_have_an_account__string">Have an account?</string>
+    <string name="username_string">Username</string>
+    <string name="signup_string">Signup</string>
+</resources>

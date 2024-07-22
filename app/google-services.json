@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "114091763937",
+    "project_id": "liquidlounge-630a8",
+    "storage_bucket": "liquidlounge-630a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:114091763937:android:03060955653e0a76f06fa0",
+        "android_client_info": {
+          "package_name": "com.example.liquidlounge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "114091763937-d4u8drqrag9kcsskeaceta2949uapana.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.liquidlounge",
+            "certificate_hash": "4e92e53d3b9d594cd9ad378ec75c1790d6bb9434"
+          }
+        },
+        {
+          "client_id": "114091763937-36o6d34rsis49apif8t5f6m2pnek2o17.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpEZPcEcaYU6E_u_iOo_3Snt1DdfLEtuc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "114091763937-36o6d34rsis49apif8t5f6m2pnek2o17.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

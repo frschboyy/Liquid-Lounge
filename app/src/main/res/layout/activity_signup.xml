@@ -1,0 +1,323 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/rectangle_6_color">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        tools:context=".Signup">
+
+        <EditText
+            android:id="@+id/back"
+            android:layout_width="285dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/inputbox"
+            android:ems="10"
+            android:focusable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_pass"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/pass"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/inputbox"
+            android:ems="10"
+            android:fontFamily="@font/interregular"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/back"
+            app:layout_constraintTop_toBottomOf="@+id/label_pass"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/question"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:contentDescription="Requirements"
+            android:src="@drawable/question"
+            app:layout_constraintBottom_toBottomOf="@+id/pass"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/back"
+            app:layout_constraintTop_toTopOf="@+id/pass"
+            app:layout_constraintVertical_bias="0.48"
+            tools:ignore="HardcodedText"/>
+
+
+        <TextView
+            android:id="@+id/label_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/interregular"
+            android:text="Password"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mail"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/showPass"
+            android:layout_width="25dp"
+            android:layout_height="50dp"
+            android:contentDescription="passVisibility"
+            app:layout_constraintBottom_toBottomOf="@+id/back"
+            app:layout_constraintEnd_toEndOf="@+id/back"
+            app:layout_constraintStart_toEndOf="@+id/pass"
+            app:layout_constraintTop_toTopOf="@+id/back"
+            app:srcCompat="@drawable/show"
+            app:tint="@color/rectangle_6_color"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/label_mail"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/interregular"
+            android:text="Email"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phone"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/mail"
+            android:layout_width="285dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/inputbox"
+            android:ems="10"
+            android:fontFamily="@font/interregular"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_mail"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/label_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/interregular"
+            android:text="Phone Number"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="285dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/inputbox"
+            android:ems="10"
+            android:fontFamily="@font/interregular"
+            android:inputType="phone"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_phone"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/label_name"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/interregular"
+            android:text="Full Name"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ellipse_1"
+            app:layout_constraintVertical_bias="0.009"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="285dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/inputbox"
+            android:ems="10"
+            android:fontFamily="@font/interregular"
+            android:inputType="text"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_name"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/label_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/interregular"
+            android:text="Confirm Password"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pass"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+
+        <View
+            android:id="@+id/ellipse_1"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/ellipse_2_shape"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/loginLogo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:contentDescription="logo"
+            android:src="@drawable/logo_signup"
+            app:layout_constraintBottom_toBottomOf="@+id/ellipse_1"
+            app:layout_constraintEnd_toEndOf="@+id/ellipse_1"
+            app:layout_constraintStart_toStartOf="@+id/ellipse_1"
+            app:layout_constraintTop_toTopOf="@+id/ellipse_1"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/back2"
+            android:layout_width="285dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/inputbox"
+            android:ems="10"
+            android:focusable="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.506"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_confirm"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:id="@+id/showPass2"
+            android:layout_width="25dp"
+            android:layout_height="50dp"
+            android:contentDescription="passVisibility"
+            app:layout_constraintBottom_toBottomOf="@+id/back2"
+            app:layout_constraintEnd_toEndOf="@+id/back2"
+            app:layout_constraintStart_toEndOf="@+id/confirm"
+            app:layout_constraintTop_toTopOf="@+id/back2"
+            app:srcCompat="@drawable/show"
+            app:tint="@color/rectangle_6_color"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/confirm"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:background="@drawable/inputbox"
+            android:ems="10"
+            android:fontFamily="@font/interregular"
+            android:inputType="textPassword"
+            android:paddingStart="10dp"
+            android:paddingEnd="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/back2"
+            app:layout_constraintTop_toBottomOf="@+id/label_confirm"
+            app:layout_constraintVertical_bias="0.036"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/signup"
+            android:layout_width="300dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/submit"
+            android:text="Sign UP"
+            android:textSize="24sp"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/interbold"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/interregular"
+            android:text="Have an Account?"
+            android:textColor="#8175AD"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirm"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="HardcodedText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

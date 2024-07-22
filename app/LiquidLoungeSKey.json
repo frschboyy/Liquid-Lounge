@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "liquidlounge-630a8",
+  "private_key_id": "8047d7320339e7abdf58c80d22f5bd135fdf17e4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCNM+YYspVcyhg1\nqfJdzAY/nDVD9b1KwWqsLQ63cRLJ36TNfAGxiBHhd6TrlUwgtYOnLZnB2/VyeCSO\nQvZIiyk6cao+YJ9Uf5oI0pxDcDnnIRgg0xiWNnaxtIwScsLYXpnZ2gg1qL9Z9DJ9\nKKi07s6l/0wTX+zgNNwiCSK9PFKaURJvq/57UicVDo2TFHoUwWn6BBZTe+aaWV8g\nOsPgM2P3Atu3S6WWsi3/DopamYr4F2wVVpaZNL/9e90M0HzE8cQTy7bNlxvQiCbl\n0APNjasAyQ49NQwnUrxWIcWzEnUcuQyS4U+SuoglJIiabbNC/DMSs/zh1hHN7/vo\nDa9K9gylAgMBAAECggEAFRzIb7LsAEa7XfK+KWYjHQm3MSUiG3ZWA85s3+LJQ2Ps\nGUlMW4YT3llsUEkva8iYGbwIvGKuDWKHXLoIZwpfrLxoDxGVYSX/Gwiakr7J+ZQK\nLoZBq9wS3Tk4pF2CYqWqbVdbWOKVUdbgYbRdnUgDn/BPKKp0GYXt0Cz7g73sP+Rc\naJk+UrErrCQoMc4dznxqMj6Eln6YGfrstkj5PaZFw5PGLA8dZm5NbIjfB75YXLYd\nsgJK4UUDPEfnTAENBKOPItVaVNz65hdF81boLZL026YDsdtnKbMAI8pytWJdcMxc\nspqhy18skpbeQeHeLmR+LT9+qvBr64U+jLxkBb0voQKBgQDHc8+EhsGJnWgC3t9G\n8GEiaTXR9fmtwNijtsVY5IFkjU2+HfwYiWN6bmYWmby8oeeNCKrP1xIacgbG6wKd\nBdvnIHh7uW97G77nbQleBNTcUgMLqIHRB/eB+zvP4T1g6O4m94nNczM9kua3W9zF\nHh1Xmo1PcB7PHF87yqqfGDR8XQKBgQC1PFjcL/yUp7L39czC/1MsTMiMz1S/sUT9\n8neL4nHtmXnsM1zw8K6cSrafk0OvFuz0STQFkxY5Wl1ZiYm2h3MwGLKH6DRHTd/z\nF5FxfsIYu0pt5/wD1s16LyZEaIvUI6cDoB02dvhWC95VhbpI3qedKu8PMWtsSUu5\n3xSC6QaM6QKBgQC1JxagA9TcrL6/fLXGtKVEn9JmNMblbXZWm7Z6mnB7Z2vo9Ur2\n7jIQDR1kAZZOra6lhe2+gFTM+Cv3l5P0ElI8hl1n4nDCm9y0TXBomHLM+SATAqWF\nuXqv8APPN4CL+IP1mHbsx2kOz9IFT8Ygss1rt9AJCoixC8/jepuljFJ/cQKBgHTU\nZRfz2yfc/xK3Ifsl6nDpQnL7CE/WL3pgvk2veO/Iev8XkTdEf9sCkr1FimEpLzC+\nq8lYKwBnzztz3RGMOWXs1dGkj2bTvaUQMVLveqHEwlMdM6kp5CV6lXmNx23GWdiN\nc6dzg9y8I+QPo6lr1rMLRTYPDoesrCMyuh81pmJZAoGBALfd4rxQj4Yj5cyXDpJE\nQIPzWn3dyRJNXEIX3vsZWnaWJE0Z3lJF4nJU3abEzGfyQrweVNcfnqKKzsLui/9C\nW1c/KTLKujYCFRGi0ljJsYNC1ky/zPFnXO2y24QqiE/w0tzUTpbQGR1rfl3wSfLg\n2UwKVzx1WZbGcVJYY0UR1NDB\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-g3lnv@liquidlounge-630a8.iam.gserviceaccount.com",
+  "client_id": "109934127919142947961",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-g3lnv%40liquidlounge-630a8.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
