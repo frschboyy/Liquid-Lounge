@@ -2,6 +2,8 @@ package com.example.liquidlounge;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.ActionBar;
@@ -9,6 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class UserHome extends AppCompatActivity {
     ImageView checkout, profile, soft, energy, alcohol, dairy, water;
+    Button viewCart;
+    Intent price = getIntent();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,8 +21,9 @@ public class UserHome extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
         ab.hide();
 
-        Intent cartData = getIntent();
+        int amount = price.getIntExtra("price", 0);
 
+        viewCart = findViewById(R.id.viewCart);
         checkout = findViewById(R.id.checkout);
         profile = findViewById(R.id.profile);
         soft = findViewById(R.id.soft);
@@ -25,6 +31,12 @@ public class UserHome extends AppCompatActivity {
         alcohol = findViewById(R.id.alcohol);
         dairy = findViewById(R.id.dairy);
         water = findViewById(R.id.water);
+
+        viewCart.setText("View cart - KSh " + amount);
+        if(amount <= 0)
+            viewCart.setVisibility(View.GONE);
+        else
+            viewCart.setVisibility(View.VISIBLE);
 
         checkout.setOnClickListener(view -> {
             Intent intent = new Intent(this, Checkout.class);

@@ -183,6 +183,24 @@
 
     </ScrollView>
 
+    <Button
+        android:id="@+id/viewCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:background="@drawable/viewcart"
+        android:textColor="#FFFFFF"
+        android:fontFamily="@font/interbold"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="0.952" />
+
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"

@@ -86,6 +86,12 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
 
         fetchProducts(); // Fetch products based on category from Firestore
 
+        viewCart.setOnClickListener(view -> {
+            saveContext();
+            intent = new Intent(this,Checkout.class);
+            startActivity(intent);
+        });
+
         checkout.setOnClickListener(view -> {
             saveContext();
             intent = new Intent(this, Checkout.class);
@@ -95,6 +101,7 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
         home.setOnClickListener(view -> {
             saveContext();
             intent = new Intent(this, UserHome.class);
+            intent.putExtra("price",totalPrice);
             startActivity(intent);
         });
 
