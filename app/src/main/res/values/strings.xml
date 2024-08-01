@@ -12,4 +12,5 @@
     <string name="_have_an_account__string">Have an account?</string>
     <string name="username_string">Username</string>
     <string name="signup_string">Signup</string>
+    <string name="title_activity_stock">Stock</string>
 </resources>

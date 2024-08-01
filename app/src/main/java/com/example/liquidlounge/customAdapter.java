@@ -20,7 +20,6 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.ViewHolder
     private List<Product> productList;
     private Context context;
     private static OnItemClickListener listener;
-    private boolean isZero;
 
     public customAdapter(List<Product> productList, Context context, OnItemClickListener listener) {
         this.productList = productList;
@@ -62,13 +61,15 @@ public class customAdapter extends RecyclerView.Adapter<customAdapter.ViewHolder
         }
 
         // Update view item based on product quantity
-        private void updateViewItem() {
+        void updateViewItem() {
             if (p != null) {
                 count.setText(String.valueOf(p.getQuantity()));
                 if (p.getQuantity() > 0) {
                     count.setVisibility(View.VISIBLE);
                     minus.setVisibility(View.VISIBLE);
-
+                    if (p.getQuantity() > 1){
+                        minus.setImageResource(R.drawable.remove);
+                    }
                 } else {
                     count.setVisibility(View.INVISIBLE);
                     minus.setVisibility(View.GONE);

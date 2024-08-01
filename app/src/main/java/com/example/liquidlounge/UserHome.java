@@ -9,22 +9,31 @@ import android.widget.ImageView;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class UserHome extends AppCompatActivity {
     ImageView checkout, profile, soft, energy, alcohol, dairy, water;
     Button viewCart;
-    Intent price = getIntent();
+
+    // Firebase instances
+    private FirebaseFirestore fStore;
+    private FirebaseAuth mAuth;
+    DocumentReference docRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        ActionBar ab = getSupportActionBar();
-        ab.hide();
 
-        int amount = price.getIntExtra("price", 0);
+        ActionBar ab = getSupportActionBar();
+        if (ab != null) {
+            ab.hide();
+        }
 
         viewCart = findViewById(R.id.viewCart);
-        checkout = findViewById(R.id.checkout);
+        checkout = findViewById(R.id.orders);
         profile = findViewById(R.id.profile);
         soft = findViewById(R.id.soft);
         energy = findViewById(R.id.energy);
@@ -32,11 +41,30 @@ public class UserHome extends AppCompatActivity {
         dairy = findViewById(R.id.dairy);
         water = findViewById(R.id.water);
 
-        viewCart.setText("View cart - KSh " + amount);
-        if(amount <= 0)
-            viewCart.setVisibility(View.GONE);
-        else
-            viewCart.setVisibility(View.VISIBLE);
+        mAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+
+        docRef = fStore.collection("users").document(mAuth.getUid());
+        docRef.get()
+                .addOnSuccessListener(documentSnapshot -> {
+                            if (documentSnapshot.exists()) {
+                                Number priceObj = (Number) documentSnapshot.get("totalPrice");
+
+                                // Convert quantity to an int safely
+                                int price = (priceObj != null) ? priceObj.intValue() : 0;
+
+                                viewCart.setText("View cart - KSh " + price);
+                                if (price <= 0)
+                                    viewCart.setVisibility(View.GONE);
+                                else
+                                    viewCart.setVisibility(View.VISIBLE);
+                            }
+                        });
+
+        viewCart.setOnClickListener(view -> {
+            Intent intent = new Intent(this, Cart.class);
+            startActivity(intent);
+        });
 
         checkout.setOnClickListener(view -> {
             Intent intent = new Intent(this, Checkout.class);

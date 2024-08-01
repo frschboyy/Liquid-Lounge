@@ -15,7 +15,7 @@
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/interbold"
         android:gravity="center"
-        android:text="Liquid Lounge"
+        android:text="Checkout"
         android:textAlignment="center"
         android:textColor="#0F3063"
         android:textSize="24sp"
@@ -41,9 +41,187 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="84dp" />
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/interblack"
+                android:textSize="24sp"
+                android:layout_gravity="start|center_vertical"
+                android:text="Your Order"
+                tools:ignore="HardcodedText"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="30dp">
+
+                <TextView
+                    android:id="@+id/totalPrice"
+                    android:layout_width="340dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/submit"
+                    android:gravity="end|center_vertical"
+                    android:fontFamily="@font/interblack"
+                    android:paddingEnd="25dp"
+                    android:text="price"
+                    android:textColor="@color/_bg__signup_color"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText"/>
+
+                <ImageButton
+                    android:id="@+id/viewCart"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/submit"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    app:srcCompat="@drawable/cart"
+                    app:tint="@color/rectangle_6_color" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="start|center_vertical"
+                    android:fontFamily="@font/interblack"
+                    android:text="Delivery Details"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    tools:ignore="HardcodedText" />
+
+
+                <ImageView
+                    android:id="@+id/find"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_gravity="end|center_vertical"
+                    app:srcCompat="@drawable/find" />
+            </FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/frag_corner">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"
+                    android:layout_width="340dp"
+                    android:layout_height="140dp" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/address"
+                android:textSize="14sp"
+                android:layout_width="340dp"
+                android:textColor="@color/rectangle_6_color"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginStart="10dp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/interblack"
+                android:text="Branch"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                tools:ignore="HardcodedText" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginBottom="30dp">
+
+                <RadioButton
+                    android:id="@+id/radioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/rectangle_7_color"
+                    android:text="HQ"
+                    tools:ignore="HardcodedText"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="#FF0000"
+                    android:text="Anger"
+                    tools:ignore="HardcodedText"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="#F85490"
+                    android:text="Embarrassment"
+                    tools:ignore="HardcodedText"/>
+
+                <RadioButton
+                    android:id="@+id/radioButton4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/_have_an_account__color"
+                    android:text="Sadness"
+                    tools:ignore="HardcodedText"/>
+
+                <RadioButton
+                    android:id="@+id/tail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/_have_an_account__color"
+                    tools:ignore="HardcodedText"/>
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/purchase"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/submit"
+                android:layout_marginBottom="15dp"
+                android:layout_gravity="center"
+                android:text="PURCHASE"
+                tools:ignore="HardcodedText"/>
+
+        </LinearLayout>
 
     </ScrollView>
 
@@ -65,7 +243,7 @@
         android:layout_marginEnd="80dp"
         android:contentDescription="nav_icon"
         app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toStartOf="@+id/checkout"
+        app:layout_constraintEnd_toStartOf="@+id/orders"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
@@ -73,7 +251,7 @@
         tools:ignore="HardcodedText" />
 
     <ImageView
-        android:id="@+id/checkout"
+        android:id="@+id/orders"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:contentDescription="nav_icon"
@@ -94,7 +272,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/checkout"
+        app:layout_constraintStart_toEndOf="@+id/orders"
         app:layout_constraintTop_toTopOf="@+id/view"
         app:srcCompat="@drawable/profile"
         tools:ignore="HardcodedText" />

@@ -5,14 +5,15 @@ import com.google.firebase.storage.StorageReference;
 import java.io.Serializable;
 
 public class Product{
-    private String name;
+    private String name, category;
     private int quantity;
     private double price;
 
-    public Product(String name, int quantity, double price) {
+    public Product(String name, int quantity, double price, String category) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
+        this.category = category;
     }
 
     @Override
@@ -48,4 +49,11 @@ public class Product{
         this.name = name;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 }

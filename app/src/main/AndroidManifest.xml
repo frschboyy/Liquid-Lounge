@@ -15,6 +15,20 @@
         android:theme="@style/Theme.LiquidLounge"
         tools:targetApi="31">
         <activity
+            android:name=".AdminOrderLogs"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBuKRf8LDiaw_jUz3FuFdlSoftrXfxPmqg" />
+
+        <activity
+            android:name=".AdminProfile"
+            android:exported="false" />
+        <activity
+            android:name=".AdminOrders"
+            android:exported="false" />
+        <activity
             android:name=".Cart"
             android:exported="false" />
         <activity
@@ -34,9 +48,6 @@
             android:exported="false" />
         <activity
             android:name=".UserHome"
-            android:exported="false" />
-        <activity
-            android:name=".AdminLogin"
             android:exported="false" />
         <activity
             android:name=".UserLogin"

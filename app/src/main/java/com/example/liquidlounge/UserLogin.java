@@ -66,7 +66,6 @@ public class UserLogin extends AppCompatActivity {
                         currUser = mAuth.getCurrentUser();
                         // Sign In Success
                         if (currUser != null){
-                            Toast.makeText(this, "Signed In",Toast.LENGTH_SHORT).show();
                             // Check user access level
                             checkUserAccess(currUser.getUid());
                         }
@@ -76,7 +75,6 @@ public class UserLogin extends AppCompatActivity {
                     }
                 });
             }
-
         });
 
         signup.setOnClickListener(view -> {
@@ -99,26 +97,12 @@ public class UserLogin extends AppCompatActivity {
     }
 
     private void checkUserAccess(String uid) {
-//        DocumentReference userRef = fStore.collection("users").document(uid);
-        // extract the document data
-//        userRef.get().addOnSuccessListener(documentSnapshot -> {
-//            Log.d("TAG", "onSuccess" + documentSnapshot.getData());
-//            if (documentSnapshot.exists()) {
-//                // user is admin
-//                if(documentSnapshot.getString("isAdmin") != null){
-//                    Intent intent = new Intent(this, AdminHome.class);
-//                    startActivity(intent);
-//                } else {
-//                    Intent intent = new Intent(this, UserHome.class);
-//                    startActivity(intent);
-//                }
-//                finish();
-//            }
-//        });
         if(uid.equals("sXOXGtDPGSVTjiXE5dlkmK8fyTx2")){
+            Toast.makeText(this,"Admin Recognized",Toast.LENGTH_SHORT).show();
             intent = new Intent(this, AdminHome.class);
         }
         else{
+            Toast.makeText(this, "Signed In",Toast.LENGTH_SHORT).show();
             intent = new Intent(this, UserHome.class);
         }
         startActivity(intent);
@@ -148,11 +132,16 @@ public class UserLogin extends AppCompatActivity {
     public void onStart() {
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         super.onStart();
+        Intent intent;
 
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currUser = mAuth.getCurrentUser();
         if(currUser != null){
-            Intent intent = new Intent(this, UserHome.class);
+            if (currUser.getUid().equals("sXOXGtDPGSVTjiXE5dlkmK8fyTx2"))
+                intent = new Intent(this, AdminHome.class);
+            else {
+                intent = new Intent(this, UserHome.class);
+            }
             startActivity(intent);
             finish();
         }

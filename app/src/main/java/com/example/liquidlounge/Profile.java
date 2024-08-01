@@ -5,12 +5,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -29,7 +25,7 @@ public class Profile extends AppCompatActivity {
         ab.hide();
 
         home = findViewById(R.id.homepage);
-        checkout = findViewById(R.id.checkout);
+        checkout = findViewById(R.id.orders);
         logout = findViewById(R.id.logout);
 
         fStore = FirebaseFirestore.getInstance();

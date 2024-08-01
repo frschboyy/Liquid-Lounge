@@ -6,22 +6,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-import com.google.firebase.firestore.WriteBatch;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,13 +29,13 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
     private FirebaseAuth mAuth;
     DocumentReference docRef;
 
-
     // UI elements
     private RecyclerView recyclerView;
     private customAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
-    private ImageView home, checkout, profile, add, minus;
+    private ImageView home, checkout, profile;
     private Button viewCart;
+    private ProgressBar progressBar; // ProgressBar
 
     // Product lists
     private List<String> productNames;
@@ -76,19 +71,22 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
 
         // Initialize other UI components
         home = findViewById(R.id.homepage);
-        checkout = findViewById(R.id.checkout);
+        checkout = findViewById(R.id.orders);
         profile = findViewById(R.id.profile);
         viewCart = findViewById(R.id.viewCart);
+        progressBar = findViewById(R.id.progressBar); // Initialize ProgressBar
 
         // Retrieve category from intent
         intent = getIntent();
         category = intent.getStringExtra("category");
 
+        // Show ProgressBar and fetch products
+        progressBar.setVisibility(View.VISIBLE);
         fetchProducts(); // Fetch products based on category from Firestore
 
         viewCart.setOnClickListener(view -> {
             saveContext();
-            intent = new Intent(this,Checkout.class);
+            intent = new Intent(this, Cart.class);
             startActivity(intent);
         });
 
@@ -101,7 +99,6 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
         home.setOnClickListener(view -> {
             saveContext();
             intent = new Intent(this, UserHome.class);
-            intent.putExtra("price",totalPrice);
             startActivity(intent);
         });
 
@@ -135,6 +132,7 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
                                     Number quantityObj = (Number) productDetail.get("quantity");
                                     Number priceObj = (Number) productDetail.get("price");
                                     String name = (String) productDetail.get("name");
+                                    String category = (String) productDetail.get("category");
 
                                     // Convert quantity to an int safely
                                     int quantity = (quantityObj != null) ? quantityObj.intValue() : 0;
@@ -142,7 +140,7 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
                                     double price = (priceObj != null) ? priceObj.doubleValue() : 0.0;
 
                                     // Update globally selected product list with retrieved details
-                                    Product p = new Product(name, quantity, price);
+                                    Product p = new Product(name, quantity, price, category);
                                     productDetails.selectedProducts.add(p);
 
                                     totalPrice += (int) (quantity*price);
@@ -195,6 +193,7 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
                                 adapter.notifyDataSetChanged();
                                 Log.d("Product Details", "No products selected");
                             }
+                            progressBar.setVisibility(View.GONE); // Hide ProgressBar when data is loaded
                         }
                     } else {
                         // Handle case where the document doesn't exist
@@ -250,7 +249,7 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
                     if (documentSnapshot.exists()) {
                         Double price = documentSnapshot.getDouble(name);
                         if (price != null) {
-                            Product p = new Product(name, 0, price);
+                            Product p = new Product(name, 0, price, category);
                             productList.add(p);
 
                             // Check if this was the last item to notify data set changed
@@ -289,8 +288,8 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
             }
         }
         // Convert List<Product> to HashMap<String, Product>
-        Map<String, Map<String, Object>> local = convertListToMap(selectedProducts);
-        Map<String, Map<String, Object>> global = convertListToMap(productDetails.selectedProducts);
+        Map<String, Map<String, Object>> local = convertListToMap(selectedProducts, 0);
+        Map<String, Map<String, Object>> global = convertListToMap(productDetails.selectedProducts,1);
 
         docRef = fStore.collection("users").document(mAuth.getUid());
 
@@ -298,6 +297,7 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
         details.put("localProducts - " + category, local);
         details.put("globalProducts", global);
         details.put("categories", productDetails.categoryNames);
+        details.put("totalPrice", totalPrice);
         Log.d("Simple Debug6", ""+productDetails.categoryNames);
 
         docRef.update(details)
@@ -308,7 +308,7 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
                 });
     }
 
-    private Map<String, Map<String, Object>> convertListToMap(List<Product> list) {
+    private Map<String, Map<String, Object>> convertListToMap(List<Product> list, int num) {
         Map<String, Map<String, Object>> listMap = new HashMap<>();
 
         for (Product product : list) {
@@ -316,6 +316,8 @@ public class Products extends AppCompatActivity implements OnItemClickListener {
             data.put("name", product.getName());
             data.put("quantity", product.getQuantity());
             data.put("price", product.getPrice());
+            if(num == 1)
+                data.put("category", product.getCategory());
 
             listMap.put(product.getName(), data);
         }

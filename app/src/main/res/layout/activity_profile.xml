@@ -64,7 +64,7 @@
         android:layout_marginEnd="80dp"
         android:contentDescription="nav_icon"
         app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toStartOf="@+id/checkout"
+        app:layout_constraintEnd_toStartOf="@+id/orders"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view"
@@ -72,7 +72,7 @@
         tools:ignore="HardcodedText" />
 
     <ImageView
-        android:id="@+id/checkout"
+        android:id="@+id/orders"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:contentDescription="nav_icon"
@@ -92,7 +92,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/checkout"
+        app:layout_constraintStart_toEndOf="@+id/orders"
         app:layout_constraintTop_toTopOf="@+id/view"
         app:srcCompat="@drawable/profile"
         app:tint="#0F3063"
